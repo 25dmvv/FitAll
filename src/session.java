@@ -9,6 +9,7 @@ public class Session {
     private String startTime;
     private int duration;
     private int availableSpaces;
+}
 
     // Constructor Method
     public Session(String sessionName, String levelofFitness, String day, String startTime, int duration, int availableSpaces) {
@@ -18,7 +19,58 @@ public class Session {
         this.day = day;
         this.startTime = startTime;
         this.duration = duration;
-        this.availableSpaces = availableSpaces;
-    }
+        this.availableSpaces = availableSpaces; 
+
+
     
-}
+    }
+
+    // Getters
+    public int getSessionID() {
+        return sessionID;
+    }
+
+    public String getSessionName() {
+        return sessionName;
+    }
+
+    public String getLevelOfFitness() {
+        return levelOfFitness;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public int geturation() {
+        return duration;
+    }
+
+    public int getAvailableSpaces() {
+        return availableSpaces;
+    }
+
+    // Registering a customer
+    public boolean register() {
+        if (availableSpaces > 0) {
+            availableSpaces-- ;
+            return true; 
+        } else {
+            return false; // if there are no spaces left
+        }
+     }
+
+    // Cancelling a registration
+    public boolean cancel() {
+        availableSpaces++ ;
+        return true;    
+     }
+
+    // Prints session details
+    public void printDetails() {
+        System.out.println("Session ID: " + sessionID + " || " + sessionName + " || " + levelOfFitness + " || " + day + " || " + startTime +  " || Duration " + duration + " mins || Spaces Left: " + availableSpaces);
+     }
