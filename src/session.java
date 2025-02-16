@@ -25,7 +25,7 @@ public class Session {
     
     }
 
-    // Getters
+    //  Getters
     public int getSessionID() {
         return sessionID;
     }
@@ -46,7 +46,7 @@ public class Session {
         return startTime;
     }
 
-    public int geturation() {
+    public int getDuration() {
         return duration;
     }
 
@@ -57,7 +57,7 @@ public class Session {
     // Registering a customer
     public boolean register() {
         if (availableSpaces > 0) {
-            availableSpaces-- ;
+            availableSpaces--;
             return true; 
         } else {
             return false; // if there are no spaces left
@@ -66,7 +66,7 @@ public class Session {
 
     // Cancelling a registration
     public boolean cancel() {
-        availableSpaces++ ;
+        availableSpaces++;
         return true;    
      }
 
